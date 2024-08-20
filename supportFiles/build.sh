@@ -36,6 +36,9 @@ echo Enable autologin
 mkdir -p -v $HOME/LIVE_BOOT/chroot/etc/systemd/system/getty@tty1.service.d/
 cp -v /supportFiles/override.conf $HOME/LIVE_BOOT/chroot/etc/systemd/system/getty@tty1.service.d/override.conf
 
+echo Populate root history
+cp -v /supportFiles/root-history.sh $HOME/LIVE_BOOT/chroot/root/.bash_history
+
 echo Unmounting dev / proc / sys
 umount $HOME/LIVE_BOOT/chroot/proc
 umount $HOME/LIVE_BOOT/chroot/dev
